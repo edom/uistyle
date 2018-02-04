@@ -69,3 +69,22 @@ persamaannya masing-masing.
 	a^{m^{a \, ^{n}\log b }} = b^{\frac{m}{n}}
 \end{align}
 
+%-----------------------------------------------------------------------------%
+\section{Algoritma}
+%-----------------------------------------------------------------------------%
+\begin{algorithm}[H]
+\caption{Contoh algoritma}\label{algorithm:example}
+\begin{algorithmic}[1]
+\State $i \leftarrow 1$
+\While{$i <  length(A)$}
+	\State $x \leftarrow A[i]$
+	\State $k \leftarrow i - 1$
+	\While{$j \ge 0$ and $A[j] > x$}
+		\State $A[j+1] \leftarrow A[j]$
+		\State $j \leftarrow j - 1$
+	\EndWhile
+	\State $A[j+1] ← x$
+	\State $i \leftarrow i + 1$
+\EndWhile
+\end{algorithmic}
+\end{algorithm}

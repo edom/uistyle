@@ -22,6 +22,8 @@
 %-----------------------------------------------------------------------------%
 % Package
 %-----------------------------------------------------------------------------%
+%Berguna untuk notasi set matematis
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
 
 %
 % From The tocbibind package [author: Peter Wilson, Herries Press]:
@@ -31,7 +33,7 @@
 % a limited extent with the ltxdoc class.
 % 
 \usepackage{tocbibind}
-
+\usepackage[none]{hyphenat}
 %
 % From [Wikipedia]:
 % The package hyperref provides LaTeX the ability to create hyperlinks within 
@@ -105,12 +107,27 @@
 % rumus. 
 % 
 \usepackage{amsmath}
+\usepackage{amssymb}
+
+% Notasi matematik tambahan
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator{\Prob}{\mathbb{P}}
+\DeclareMathOperator*{\argmin}{argmin} % no space, limits underneath in displays
+\DeclareMathOperator*{\argmax}{argmax} % no space, limits underneath in displays
+
+% Menambahkan fitur algoritma dalam tulisan
+\usepackage{algorithm}% http://ctan.org/pkg/algorithms
+\usepackage{algpseudocode}% http://ctan.org/pkg/algorithmicx
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
 
 % 
 % Membuat seluruh tulisan menjadi Times New Roman.
 % 
-\usepackage{pslatex}
-
+% \usepackage{pslatex}
+% Tulisan times new roman, tetapi dengan notasi matematik yang lebih cantik
+\renewcommand\rmdefault{ptm}
 % 
 % Package untuk membuat header dan footer pada dokumen. 
 % 
@@ -139,6 +156,8 @@
   \floatplacement{table}{H}
 
 
+%Custom
+% \usepackage{calrsfs}
 %-----------------------------------------------------------------------------%
 % Konfigurasi
 %-----------------------------------------------------------------------------%
@@ -196,6 +215,17 @@
 %-----------------------------------------------------------------------------%
 % Perintah Baru
 %-----------------------------------------------------------------------------%
+% Perintah untuk Notasil Matematis
+% \newcommand{\Lb}{\pazocal{L}}
+\makeatletter
+\renewcommand{\@chapapp}{}% Not necessary...
+\newenvironment{chapquote}[2][2em]
+  {\setlength{\@tempdima}{#1}%
+   \def\chapquote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape}
+  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
 
 % 
 % Perintah untuk membuat huruf tecetak miring. (alias)
@@ -268,32 +298,32 @@
 %-----------------------------------------------------------------------------%
 %
 % Beberapa istilah yang tepat untuk digunakan dalam laporan.
-\renewcommand{\bibname}{Daftar Referensi}
+\renewcommand{\bibname}{Bibliography}
 % 
 % 
-\renewcommand{\contentsname}{Daftar Isi}
+\renewcommand{\contentsname}{Table of Contents}
 % 
 % 
-\renewcommand{\listfigurename}{Daftar Gambar}
+\renewcommand{\listfigurename}{List of Figures}
 % 
 % 
-\renewcommand{\listtablename}{Daftar Tabel}
+\renewcommand{\listtablename}{List of Tables}
 % 
 % 
-\renewcommand{\chaptername}{BAB}
+\renewcommand{\chaptername}{Chapter}
 % 
 % 
-\renewcommand{\figurename}{\bo{Gambar}}
+\renewcommand{\figurename}{\bo{Figure}}
 % 
 % 
-\renewcommand{\tablename}{\bo{Tabel}}
+\renewcommand{\tablename}{\bo{Table}}
 % 
 % 
-\newcommand{\pic}{Gambar}
+\newcommand{\pic}{Figure}
 % 
 % 
-\newcommand{\tab}{Tabel}
+\newcommand{\tab}{Table}
 % 
 % 
-\newcommand{\equ}{Persamaan}
+\newcommand{\equ}{Equation}
 
