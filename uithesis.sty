@@ -110,10 +110,10 @@
 \usepackage{amssymb}
 
 % Notasi matematik tambahan
-\DeclareMathOperator{\E}{\mathbb{E}}
-\DeclareMathOperator{\Prob}{\mathbb{P}}
-\DeclareMathOperator*{\argmin}{argmin} % no space, limits underneath in displays
-\DeclareMathOperator*{\argmax}{argmax} % no space, limits underneath in displays
+\DeclareMathOperator{\E}{\mathbb{E}} %Expektasi Statistik
+\DeclareMathOperator{\Prob}{\mathbb{P}} %Probabilitas
+\DeclareMathOperator*{\argmin}{argmin} % Argmin
+\DeclareMathOperator*{\argmax}{argmax} % Argmax
 
 % Menambahkan fitur algoritma dalam tulisan
 \usepackage{algorithm}% http://ctan.org/pkg/algorithms
@@ -156,8 +156,6 @@
   \floatplacement{table}{H}
 
 
-%Custom
-% \usepackage{calrsfs}
 %-----------------------------------------------------------------------------%
 % Konfigurasi
 %-----------------------------------------------------------------------------%
@@ -215,18 +213,6 @@
 %-----------------------------------------------------------------------------%
 % Perintah Baru
 %-----------------------------------------------------------------------------%
-% Perintah untuk Notasil Matematis
-% \newcommand{\Lb}{\pazocal{L}}
-\makeatletter
-\renewcommand{\@chapapp}{}% Not necessary...
-\newenvironment{chapquote}[2][2em]
-  {\setlength{\@tempdima}{#1}%
-   \def\chapquote@author{#2}%
-   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
-   \itshape}
-  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
-\makeatother
-
 % 
 % Perintah untuk membuat huruf tecetak miring. (alias)
 \newcommand{\f}[1]{\textit{#1}}
@@ -298,32 +284,32 @@
 %-----------------------------------------------------------------------------%
 %
 % Beberapa istilah yang tepat untuk digunakan dalam laporan.
-\renewcommand{\bibname}{Bibliography}
+\renewcommand{\bibname}{Daftar Referensi}
 % 
 % 
-\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\contentsname}{Daftar Isi}
 % 
 % 
-\renewcommand{\listfigurename}{List of Figures}
+\renewcommand{\listfigurename}{Daftar Gambar}
 % 
 % 
-\renewcommand{\listtablename}{List of Tables}
+\renewcommand{\listtablename}{Daftar Tabel}
 % 
 % 
-\renewcommand{\chaptername}{Chapter}
+\renewcommand{\chaptername}{BAB}
 % 
 % 
-\renewcommand{\figurename}{\bo{Figure}}
+\renewcommand{\figurename}{\bo{Gambar}}
 % 
 % 
-\renewcommand{\tablename}{\bo{Table}}
+\renewcommand{\tablename}{\bo{Tabel}}
 % 
 % 
-\newcommand{\pic}{Figure}
+\newcommand{\pic}{Gambar}
 % 
 % 
-\newcommand{\tab}{Table}
+\newcommand{\tab}{Tabel}
 % 
 % 
-\newcommand{\equ}{Equation}
+\newcommand{\equ}{Persamaan}
 
